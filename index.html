@@ -4,14 +4,48 @@
   <meta charset="UTF-8" />
   <title>hit.</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       background: black;
+      color: white;
+      font-family: monospace;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .intro {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: black;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      cursor: pointer;
+      transition: opacity 0.7s ease;
+      z-index: 10;
+    }
+
+    .hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .content {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
     }
 
     .gif-container {
@@ -27,26 +61,41 @@
     }
 
     p {
-      color: white;
-      font-size: 12px;
       margin-top: 10px;
+      font-size: 12px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Container com os 3 GIFs -->
-  <div class="gif-container">
-    <img src="esquerda.gif" alt="gif esquerda" />
-    <img src="tky123g.gif" alt="gif centro" />
-    <img src="direita.gif" alt="gif direita" />
+  <!-- Tela de clique -->
+  <div class="intro" id="intro">[ click to enter ]</div>
+
+  <!-- Conteúdo principal -->
+  <div class="content" id="content" style="display: none;">
+    <div class="gif-container">
+      <img src="esquerda.gif" alt="gif esquerda" />
+      <img src="tky123g.gif" alt="gif centro" />
+      <img src="direita.gif" alt="gif direita" />
+    </div>
+    <audio id="audio" src="tky123u.mp3" loop></audio>
+    <p>hit.</p>
   </div>
 
-  <!-- Áudio que tenta iniciar automaticamente -->
-  <audio id="audio" src="tky123u.mp3" autoplay loop></audio>
+  <script>
+    const intro = document.getElementById("intro");
+    const content = document.getElementById("content");
+    const audio = document.getElementById("audio");
 
-  <!-- Texto -->
-  <p>hit.</p>
+    intro.addEventListener("click", () => {
+      audio.play().catch(() => {});
+      intro.classList.add("hidden");
+      setTimeout(() => {
+        intro.style.display = "none";
+        content.style.display = "flex";
+      }, 700);
+    });
+  </script>
 
 </body>
 </html>
