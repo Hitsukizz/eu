@@ -13,11 +13,19 @@
       height: 100vh;
       margin: 0;
     }
-    img {
+
+    .gif-container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .gif-container img {
       width: 200px;
       height: 200px;
       object-fit: cover;
     }
+
     p {
       color: white;
       font-size: 12px;
@@ -27,21 +35,25 @@
 </head>
 <body>
 
-  <img src="tky123g.gif" alt="edit gif" />
+  <!-- Container com 3 GIFs lado a lado -->
+  <div class="gif-container">
+    <img src="esquerda.gif" alt="gif esquerda" />
+    <img src="tky123g.gif" alt="gif centro" />
+    <img src="direita.gif" alt="gif direita" />
+  </div>
+
+  <!-- Áudio de fundo -->
   <audio id="audio" src="tky123u.mp3" loop></audio>
+
+  <!-- Texto abaixo -->
   <p>hit.</p>
 
   <script>
+    // Toca a música quando o usuário clicar
     const audio = document.getElementById('audio');
-
-    // Ao clicar, ativa o som
     document.body.addEventListener('click', () => {
-      audio.play().then(() => {
-        console.log("Áudio tocando");
-      }).catch((err) => {
-        console.log("Erro ao tocar:", err);
-      });
-    });
+      audio.play().catch(() => {});
+    }, { once: true });
   </script>
 
 </body>
