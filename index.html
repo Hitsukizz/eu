@@ -70,17 +70,19 @@
       object-fit: cover;
     }
 
-    p {
-      margin-top: 10px;
-      font-size: 12px;
+    .text-block {
+      margin-top: 12px;
+      font-size: 14px; /* Levemente maior que 12px */
       color: white;
+      text-align: center;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
 
   <!-- Tela de entrada -->
-  <div class="intro" id="intro">[ start ]</div>
+  <div class="intro" id="intro">eu</div>
 
   <!-- Conteúdo do site -->
   <div class="content" id="content">
@@ -90,7 +92,13 @@
       <img src="direita.gif" alt="gif direita" />
     </div>
     <audio id="audio" src="tky123u.mp3" loop></audio>
-    <p>eu.</p>
+
+    <!-- Texto abaixo dos gifs -->
+    <div class="text-block">
+      neon genesis evangelion<br>
+      devil may cry<br>
+      shadow of colossus
+    </div>
   </div>
 
   <script>
@@ -107,7 +115,6 @@
       }, 500);
     };
 
-    // Inicia ao clicar em qualquer lugar da tela
     document.body.addEventListener("click", enterSite, { once: true });
   </script>
 
