@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>hit.</title>
+  <style>
+    body {
+      background: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+    p {
+      color: white;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GIF animado -->
+  <img src="tky123g.gif" alt="edit gif" />
+
+  <!-- Áudio -->
+  <audio id="audio" src="tky123u.mp3" loop></audio>
+
+  <p>hit.</p>
+
+  <script>
+    const audio = document.getElementById('audio');
+    
+    // Tenta autoplay no carregamento (pode não funcionar)
+    audio.play().catch(() => {
+      // Se não funcionar, espera o clique para tocar
+      document.body.addEventListener('click', () => {
+        audio.play();
+      }, { once: true });
+    });
+  </script>
+
+</body>
+</html>
