@@ -27,30 +27,20 @@
 </head>
 <body>
 
- 
   <img src="tky123g.gif" alt="edit gif" />
-
-
   <audio id="audio" src="tky123u.mp3" loop></audio>
-
   <p>hit.</p>
 
   <script>
     const audio = document.getElementById('audio');
 
-
-    audio.play().catch(() => {
-     
-      document.body.addEventListener('click', () => {
-        audio.play();
-      }, { once: true });
-    });
-
-  
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') {
-        audio.play().catch(() => {});
-      }
+    // Ao clicar, ativa o som
+    document.body.addEventListener('click', () => {
+      audio.play().then(() => {
+        console.log("Áudio tocando");
+      }).catch((err) => {
+        console.log("Erro ao tocar:", err);
+      });
     });
   </script>
 
