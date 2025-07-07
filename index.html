@@ -28,9 +28,9 @@
 <body>
 
   <!-- GIF animado -->
-  <img src="tky123g.gif" alt="edit gif" />
+  <img src="tky123g.gif" alt="tky123g.gif" />
 
-  <!-- Áudio -->
+  <!-- asudio -->
   <audio id="audio" src="tky123u.mp3" loop></audio>
 
   <p>hit.</p>
@@ -38,9 +38,9 @@
   <script>
     const audio = document.getElementById('audio');
     
-    // Tenta autoplay no carregamento (pode não funcionar)
+    // n1
     audio.play().catch(() => {
-      // Se não funcionar, espera o clique para tocar
+      // n3
       document.body.addEventListener('click', () => {
         audio.play();
       }, { once: true });
