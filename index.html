@@ -35,26 +35,18 @@
 </head>
 <body>
 
-  <!-- Container com 3 GIFs lado a lado -->
+  <!-- Container com os 3 GIFs -->
   <div class="gif-container">
     <img src="esquerda.gif" alt="gif esquerda" />
     <img src="tky123g.gif" alt="gif centro" />
     <img src="direita.gif" alt="gif direita" />
   </div>
 
-  <!-- Áudio de fundo -->
-  <audio id="audio" src="tky123u.mp3" loop></audio>
+  <!-- Áudio  -->
+  <audio id="audio" src="tky123u.mp3" autoplay loop></audio>
 
-  <!-- Texto abaixo -->
-  <p>hit.</p>
-
-  <script>
-    // Toca a música quando o usuário clicar
-    const audio = document.getElementById('audio');
-    document.body.addEventListener('click', () => {
-      audio.play().catch(() => {});
-    }, { once: true });
-  </script>
+  <!-- Texto -->
+  <p>me.</p>
 
 </body>
 </html>
